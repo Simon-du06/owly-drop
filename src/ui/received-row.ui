@@ -30,7 +30,7 @@
     </child>
     <child type="suffix">
       <object class="GtkButton">
-        <property name="icon-name">document-open-symbolic</property>
+        <property name="icon-name">adw-external-link-symbolic</property>
         <property name="tooltip-text" translatable="yes">Open</property>
         <property name="valign">center</property>
         <signal name="clicked" handler="on_open"/>

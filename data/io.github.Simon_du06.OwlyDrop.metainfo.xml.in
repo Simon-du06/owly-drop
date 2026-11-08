@@ -33,6 +33,13 @@
   <url type="vcs-browser">https://github.com/Simon-du06/owly-drop</url>
   <url type="contribute">https://github.com/Simon-du06/owly-drop/blob/main/CONTRIBUTING.md</url>
 
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Simon-du06/owly-drop/main/data/screenshots/window-light.png</image>
+      <caption>Receiving from and sending to iPhones</caption>
+    </screenshot>
+  </screenshots>
+
   <content_rating type="oars-1.1"/>
   <requires>
     <display_length compare="ge">360</display_length>

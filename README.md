@@ -1,8 +1,21 @@
+<div align="center">
+
+<img src="data/icons/hicolor/scalable/apps/io.github.Simon_du06.OwlyDrop.svg" width="112" alt="">
+
 # Owly Drop
+
+**AirDrop between iPhones and Linux, in a GNOME app.**
 
 [![CI](https://github.com/Simon-du06/owly-drop/actions/workflows/ci.yml/badge.svg)](https://github.com/Simon-du06/owly-drop/actions/workflows/ci.yml)
 
-A small GNOME app for **AirDrop between iPhones and Linux**. Flip a switch to be visible, accept what an iPhone sends, or drop files on the window to send them back. No terminal needed.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="data/screenshots/window-dark.png">
+  <img src="data/screenshots/window-light.png" width="460" alt="The Owly Drop window: visible to iPhones, a file being sent to an iPhone, and three files received">
+</picture>
+
+</div>
+
+Flip a switch to be visible, accept what an iPhone sends, or drop files on the window to send them back. No terminal needed.
 
 Owly Drop is a graphical front end for [**Owly**](https://github.com/t4t5/owly), which does the actual work: it runs Apple's AWDL Wi-Fi link and the AirDrop protocol on ordinary Wi-Fi cards. Owly Drop drives Owly's `owly` command and shows what happens.
 

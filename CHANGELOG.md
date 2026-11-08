@@ -4,6 +4,10 @@ All notable changes to Owly Drop are listed here. The format follows [Keep a Cha
 
 ## [Unreleased]
 
+### Changed
+- The Open button of a received file has its own icon, so it no longer looks like Show in Folder.
+- Screenshots in the README and in the AppStream metainfo.
+
 ## [0.2.0] - 2026-11-08
 
 A rewrite into a modular code base, with the same features.

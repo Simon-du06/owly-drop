@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: owly-drop\n"
 "Report-Msgid-Bugs-To: https://github.com/Simon-du06/owly-drop/issues\n"
-"POT-Creation-Date: 2026-11-08 20:15+0100\n"
-"PO-Revision-Date: 2026-11-08 20:00+0100\n"
+"POT-Creation-Date: 2026-11-08 21:59+0100\n"
+"PO-Revision-Date: 2026-11-08 22:00+0100\n"
 "Last-Translator: Simon Puccio\n"
 "Language-Team: French\n"
 "Language: fr\n"
@@ -96,6 +96,10 @@ msgstr ""
 #: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:22
 msgid "Choose the name iPhones see and the download folder"
 msgstr "Choisir le nom que voient les iPhone et le dossier de réception"
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:39
+msgid "Receiving from and sending to iPhones"
+msgstr "Recevoir des fichiers d'un iPhone et lui en envoyer"
 
 #: src/owly_drop/application.py:31
 msgid "Show the version and quit"
