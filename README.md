@@ -18,32 +18,34 @@ Owly Drop is a graphical front end for [**Owly**](https://github.com/t4t5/owly),
 - A collapsible **technical log** with Owly's raw output, for when something goes wrong.
 - English and French.
 
-## Requirements
-
-1. **Owly, installed and working with your Wi-Fi card.** Follow [Owly's install guide](https://github.com/t4t5/owly#install), then check your card:
-   ```sh
-   owly doctor
-   ```
-   If it says your card isn't on by default, Owly's README explains how to opt in (`/etc/owly/radio.toml`). Make sure one transfer works with `owly radio up` and `owly receive` in two terminals before you try Owly Drop.
-2. **GTK 4 and libadwaita 1.6 or newer for Python** (Ubuntu 25.04+, Debian 13+, Fedora 41+, Arch…), and the tools to build the app:
-   ```sh
-   # Debian / Ubuntu
-   sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 \
-     meson gettext libglib2.0-dev-bin desktop-file-utils
-   # Fedora
-   sudo dnf install python3-gobject gtk4 libadwaita meson gettext glib2-devel desktop-file-utils
-   ```
-
 ## Install
 
+**First, Owly** must be installed and working with your Wi-Fi card: follow [Owly's install guide](https://github.com/t4t5/owly#install), then run `owly doctor`. If it says your card isn't on by default, Owly's README explains how to opt in (`/etc/owly/radio.toml`).
+
+**Then Owly Drop.** Copy the block for your distribution into a terminal. It installs what's needed, then installs Owly Drop for your user, in `~/.local`.
+
+Ubuntu 25.04+ / Debian 13+:
+
 ```sh
-git clone https://github.com/Simon-du06/owly-drop.git
-cd owly-drop
-meson setup build --prefix="$HOME/.local"
-meson install -C build
+sudo apt install git meson gettext libglib2.0-dev-bin python3-gi gir1.2-gtk-4.0 gir1.2-adw-1
+git clone https://github.com/Simon-du06/owly-drop.git && cd owly-drop
+meson setup build --prefix="$HOME/.local" && meson install -C build
 ```
 
-Then open **Owly Drop** from your app grid, or run `owly-drop` (with `~/.local/bin` on your `PATH`). To install it for every user, leave out `--prefix` and run `sudo meson install -C build`. To remove it, run `ninja -C build uninstall`.
+Fedora 41+:
+
+```sh
+sudo dnf install git meson gettext glib2-devel python3-gobject gtk4 libadwaita
+git clone https://github.com/Simon-du06/owly-drop.git && cd owly-drop
+meson setup build --prefix="$HOME/.local" && meson install -C build
+```
+
+Other distributions need the same things under their own names: Git, Meson, gettext, GLib's build tools, and PyGObject with GTK 4 and libadwaita 1.6 or newer.
+
+Then open **Owly Drop** from your app grid.
+
+- **Update**: `git pull && meson install -C build`, from the `owly-drop` folder.
+- **Uninstall**: `ninja -C build uninstall`.
 
 ## Using it
 
@@ -116,8 +118,9 @@ Owly Drop is an independent project. It isn't affiliated with Owly's authors or 
 **Owly Drop** est une petite application GNOME pour faire de l'**AirDrop entre iPhone et Linux** sans terminal. Un interrupteur te rend visible, une fenêtre te laisse accepter ce que l'iPhone envoie, et un glisser-déposer lui envoie des fichiers. Elle s'appuie sur [Owly](https://github.com/t4t5/owly), qui fait le vrai travail (le lien Wi-Fi AWDL d'Apple et le protocole AirDrop).
 
 1. Installe [Owly](https://github.com/t4t5/owly#install) et vérifie ta carte Wi-Fi avec `owly doctor`.
-2. Installe les dépendances (voir *Requirements* plus haut), puis Owly Drop :
+2. Installe Owly Drop, sur Ubuntu ou Debian (pour Fedora, voir le bloc plus haut) :
    ```sh
+   sudo apt install git meson gettext libglib2.0-dev-bin python3-gi gir1.2-gtk-4.0 gir1.2-adw-1
    git clone https://github.com/Simon-du06/owly-drop.git && cd owly-drop
    meson setup build --prefix="$HOME/.local" && meson install -C build
    ```

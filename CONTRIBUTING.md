@@ -14,7 +14,7 @@ If the same problem happens with `owly radio up` and `owly receive` in a termina
 
 ## Setting up
 
-Install the dependencies listed in the [README](README.md#requirements), plus `pytest` and [`ruff`](https://docs.astral.sh/ruff/). Then:
+Install the dependencies listed in the [README](README.md#install), plus `pytest` and [`ruff`](https://docs.astral.sh/ruff/). Then:
 
 ```sh
 meson setup build
