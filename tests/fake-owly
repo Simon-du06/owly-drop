@@ -1,46 +1,96 @@
 #!/usr/bin/env bash
-# A fake owly for Owly Drop's self-test: prints what owly 0.4.2 prints.
-cmd="$1 $2"
-case "$1" in
+# A fake owly for Owly Drop's tests: prints what owly 0.4.2 prints, without a radio.
+# FAKE_OWLY_RADIO=busy     `radio up` fails the way a busy radio does
+# FAKE_OWLY_RADIO=drop     `radio up` comes up, then the radio goes down by itself
+# FAKE_OWLY_RECEIVE=link   `receive` is offered a link instead of a file
+# FAKE_OWLY_SEND=declined|failed|hang   how `send` ends
+set -u
+
+case "${1:-}" in
   radio)
+    if [ "${FAKE_OWLY_RADIO:-}" = busy ]; then
+      echo "bringing the radio up..." >&2
+      echo "owly: the radio is in use by another session" >&2
+      exit 3
+    fi
     trap 'echo "giving the radio back..." >&2; exit 0' TERM INT
     echo "bringing the radio up..." >&2
-    sleep 0.3
+    sleep 0.2
     echo "awdl0 is up: fe80::1%awdl0 (02:00:00:00:00:01). Ctrl-C takes it down." >&2
     echo "receivers on it announce 3 times 250 ms apart, every 30 s (MDNS-7)" >&2
-    sleep 0.2
-    echo "peers: 26:6e:2e:62:df:eb (iPhone)" >&2
-    while :; do sleep 0.1; done
+    echo "peers: 26:6e:2e:62:df:eb (Alice's iPhone)" >&2
+    if [ "${FAKE_OWLY_RADIO:-}" = drop ]; then
+      sleep 0.3
+      echo "owly: the radio went down: the Wi-Fi card was removed" >&2
+      exit 1
+    fi
+    while :; do sleep 0.05; done
     ;;
+
   receive)
     trap 'exit 0' INT
-    dir=.
-    while [ $# -gt 0 ]; do [ "$1" = --dir ] && dir="$2"; shift; done
-    echo "receiving as \"Test PC\" (a1b2c3d4e5f6) on [fe80::1]:8771, flags 0x89" >&2
-    sleep 0.3
+    dir=. name=host accept=0
+    shift
+    while [ $# -gt 0 ]; do
+      case "$1" in
+        --dir) dir="$2"; shift ;;
+        --name) name="$2"; shift ;;
+        --accept) accept=1 ;;
+      esac
+      shift
+    done
+    echo "receiving as \"$name\" (a1b2c3d4e5f6) on [fe80::1]:8771, flags 0x89" >&2
+    sleep 0.2
     echo "seen by fe80::abcd" >&2
     echo "\"Alice's iPhone\" (\"iPhone\") wants to send:" >&2
-    echo "  \"IMG_0001.HEIC\" public.heic 2345678 bytes" >&2
-    printf 'accept? [y/N] ' >&2
-    read -r -t 15 ans
-    if [ "$ans" = y ]; then
-      f="$dir/IMG_0001.HEIC"; printf 'fake' > "$f"; echo "$f"
+    if [ "${FAKE_OWLY_RECEIVE:-}" = link ]; then
+      echo '  "https://example.com/a?b=\"c\""' >&2
+    else
+      echo '  "IMG_0001.HEIC" public.heic 2345678 bytes' >&2
     fi
-    while :; do sleep 0.1; done
+    ans=y
+    if [ "$accept" = 0 ]; then
+      printf 'accept? [y/N] ' >&2
+      if ! read -r -t 15 ans; then echo >&2; echo "timed out" >&2; ans=; fi
+    fi
+    if [ "$ans" = y ]; then
+      if [ "${FAKE_OWLY_RECEIVE:-}" = link ]; then
+        echo '"https://example.com/a?b=\"c\""'
+      else
+        printf 'fake image' > "$dir/IMG_0001.HEIC"
+        echo "$dir/IMG_0001.HEIC"
+      fi
+    fi
+    while :; do sleep 0.05; done
     ;;
+
   browse)
-    sleep 0.3
+    sleep 0.1
     echo "a1b2c3d4e5f6   \"Alice's iPhone\" ([fe80::abcd%awdl0]:8770)"
-    sleep 0.2
+    echo "a1b2c3d4e5f6   \"Alice's iPhone\" ([fe80::abcd%awdl0]:8770)"
+    echo "0f9e8d7c6b5a   \"Bob's iPad\" ([fe80::beef%awdl0]:8770)"
+    sleep 0.1
     ;;
+
   send)
     echo "looking for \"Alice's iPhone\" for 30 s..." >&2
-    sleep 0.2
+    sleep 0.1
     echo "sending to \"Alice's iPhone\" at [fe80::abcd]:8770" >&2
+    case "${FAKE_OWLY_SEND:-}" in
+      declined) echo "declined"; exit 1 ;;
+      failed) echo "failed: the receiver closed the connection"; exit 2 ;;
+      hang) trap 'exit 130' INT; while :; do sleep 0.05; done ;;
+    esac
     echo "accepted" >&2
-    printf '\r100 / 200 bytes' >&2; sleep 0.1
-    printf '\r200 / 200 bytes' >&2; echo >&2
+    printf '\r100 / 200 bytes' >&2
+    sleep 0.05
+    printf '\r200 / 200 bytes' >&2
+    echo >&2
     echo "delivered"
     ;;
-  *) echo "fake owly: $cmd" >&2; exit 2 ;;
+
+  *)
+    echo "fake owly: unknown command: $*" >&2
+    exit 2
+    ;;
 esac

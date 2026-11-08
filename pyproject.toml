@@ -1,0 +1,26 @@
+# Owly Drop is built and installed with Meson (see meson.build).
+# This file only holds the settings of the Python tools.
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle
+  "W",
+  "F",   # pyflakes
+  "I",   # import order
+  "UP",  # newer syntax
+  "B",   # likely bugs
+  "SIM", # simpler code
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+  # PyGObject's own deprecation warnings, not this code's.
+  "ignore::DeprecationWarning:gi.*",
+  "ignore::gi.PyGIDeprecationWarning",
+]

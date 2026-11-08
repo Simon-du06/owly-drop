@@ -1,0 +1,37 @@
+#!@PYTHON@
+# SPDX-License-Identifier: MIT
+"""Starts Owly Drop. Meson fills in the paths, for the installed app and for `meson compile run`."""
+
+import gettext
+import locale
+import os
+import sys
+
+VERSION = "@VERSION@"
+MODULE_DIR = "@MODULE_DIR@"
+RESOURCE_FILE = "@RESOURCE_FILE@"
+LOCALE_DIR = "@LOCALE_DIR@"
+SCHEMA_DIR = "@SCHEMA_DIR@"  # only set when running from the build directory
+
+if SCHEMA_DIR:
+    os.environ["GSETTINGS_SCHEMA_DIR"] = SCHEMA_DIR
+sys.path.insert(1, MODULE_DIR)
+
+try:
+    locale.setlocale(locale.LC_ALL, "")
+except locale.Error:
+    pass
+# Python's gettext for the .py files, libintl's for the .ui files GTK reads.
+locale.bindtextdomain("owly-drop", LOCALE_DIR)
+locale.textdomain("owly-drop")
+gettext.bindtextdomain("owly-drop", LOCALE_DIR)
+gettext.textdomain("owly-drop")
+
+if __name__ == "__main__":
+    from gi.repository import Gio
+
+    Gio.Resource.load(RESOURCE_FILE)._register()
+
+    from owly_drop import main
+
+    sys.exit(main.main(VERSION))

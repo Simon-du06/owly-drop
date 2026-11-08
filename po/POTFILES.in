@@ -1,0 +1,15 @@
+data/io.github.Simon_du06.OwlyDrop.desktop.in
+data/io.github.Simon_du06.OwlyDrop.gschema.xml
+data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in
+src/owly_drop/application.py
+src/owly_drop/formatting.py
+src/owly_drop/received_row.py
+src/owly_drop/request_dialog.py
+src/owly_drop/send_dialog.py
+src/owly_drop/settings.py
+src/owly_drop/transfer_row.py
+src/owly_drop/window.py
+src/ui/received-row.ui
+src/ui/send-dialog.ui
+src/ui/transfer-row.ui
+src/ui/window.ui

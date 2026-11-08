@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/ruff-action@v3
+        with:
+          args: check
+      - uses: astral-sh/ruff-action@v3
+        with:
+          args: format --check
+
+  build-and-test:
+    # Fedora has a recent GTK and libadwaita, like the desktops this targets.
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - name: Install dependencies
+        run: >
+          dnf install -y --setopt=install_weak_deps=False
+          git meson gettext glib2-devel desktop-file-utils appstream libxml2
+          python3-gobject python3-pytest gtk4 libadwaita
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          meson setup build
+          meson compile -C build
+      - name: Test
+        run: meson test -C build --print-errorlogs
+      - name: Install
+        run: DESTDIR="$PWD/destdir" meson install -C build

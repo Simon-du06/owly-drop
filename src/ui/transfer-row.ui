@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="owly-drop">
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="OwlyDropTransferRow" parent="AdwActionRow">
+    <property name="title-lines">1</property>
+    <child type="suffix">
+      <object class="GtkProgressBar" id="progress_bar">
+        <property name="valign">center</property>
+        <property name="width-request">110</property>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton">
+        <property name="icon-name">process-stop-symbolic</property>
+        <property name="tooltip-text" translatable="yes">Cancel</property>
+        <property name="valign">center</property>
+        <signal name="clicked" handler="on_cancel"/>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

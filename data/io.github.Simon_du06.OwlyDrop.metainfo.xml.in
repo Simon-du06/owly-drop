@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.Simon_du06.OwlyDrop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Owly Drop</name>
+  <summary>Send and receive files with iPhones over AirDrop</summary>
+  <description>
+    <p>
+      Owly Drop makes AirDrop between iPhones and Linux a matter of flipping a switch: become
+      visible, accept what an iPhone sends, or drop files on the window to send them back.
+    </p>
+    <p>
+      It is a graphical front end for Owly, which runs Apple's AWDL Wi-Fi link and the AirDrop
+      protocol on ordinary Wi-Fi cards. Owly must be installed and working with your Wi-Fi card.
+    </p>
+    <ul>
+      <li>Accept or decline incoming files, or accept them automatically</li>
+      <li>Open received files or show them in their folder</li>
+      <li>Send files to nearby iPhones, with a progress bar</li>
+      <li>Choose the name iPhones see and the download folder</li>
+    </ul>
+  </description>
+
+  <developer id="io.github.simon_du06">
+    <name translate="no">Simon Puccio</name>
+  </developer>
+  <launchable type="desktop-id">io.github.Simon_du06.OwlyDrop.desktop</launchable>
+
+  <url type="homepage">https://github.com/Simon-du06/owly-drop</url>
+  <url type="bugtracker">https://github.com/Simon-du06/owly-drop/issues</url>
+  <url type="vcs-browser">https://github.com/Simon-du06/owly-drop</url>
+  <url type="contribute">https://github.com/Simon-du06/owly-drop/blob/main/CONTRIBUTING.md</url>
+
+  <content_rating type="oars-1.1"/>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+
+  <releases>
+    <release version="0.2.0" date="2026-11-08">
+      <description translate="no">
+        <p>A rewrite into a modular code base, with the same features:</p>
+        <ul>
+          <li>Built and installed with Meson; settings are kept with GSettings</li>
+          <li>Interfaces in GtkBuilder files and translations with standard gettext</li>
+          <li>About dialog, main menu and keyboard shortcuts</li>
+          <li>Sending can be cancelled</li>
+          <li>Unit and integration tests, and continuous integration</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-11-08">
+      <description translate="no">
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

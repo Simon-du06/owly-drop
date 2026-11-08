@@ -1,213 +1,430 @@
 # French translation of Owly Drop.
-# SPDX-License-Identifier: MIT
+# Copyright (C) 2026 Simon Puccio
+# This file is distributed under the same license as the owly-drop package.
+# Simon Puccio, 2026.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: owly-drop 0.1.0\n"
+"Project-Id-Version: owly-drop\n"
+"Report-Msgid-Bugs-To: https://github.com/Simon-du06/owly-drop/issues\n"
+"POT-Creation-Date: 2026-11-08 20:15+0100\n"
+"PO-Revision-Date: 2026-11-08 20:00+0100\n"
+"Last-Translator: Simon Puccio\n"
+"Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: data/io.github.Simon_du06.OwlyDrop.desktop.in:3
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:7
+msgid "Owly Drop"
+msgstr "Owly Drop"
+
+#: data/io.github.Simon_du06.OwlyDrop.desktop.in:4
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:8
+msgid "Send and receive files with iPhones over AirDrop"
+msgstr "Échanger des fichiers avec un iPhone par AirDrop"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/io.github.Simon_du06.OwlyDrop.desktop.in:7
+msgid "AirDrop;iPhone;iOS;Apple;share;transfer;"
+msgstr "AirDrop;iPhone;iOS;Apple;partage;transfert;"
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:6
+msgid "Name shown on iPhones"
+msgstr "Nom affiché sur les iPhone"
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:7
+msgid ""
+"The name iPhones see in their AirDrop row. Empty means “Firstname's PC”."
+msgstr ""
+"Le nom que les iPhone voient dans leur liste AirDrop. Vide : « PC de "
+"Prénom »."
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:11
+msgid "Download folder"
+msgstr "Dossier de réception"
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:12
+msgid "Where received files go. Empty means the Downloads folder."
+msgstr "Où vont les fichiers reçus. Vide : le dossier Téléchargements."
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:16
+msgid "Accept automatically"
+msgstr "Accepter automatiquement"
+
+#: data/io.github.Simon_du06.OwlyDrop.gschema.xml:17
+msgid "Accept every incoming file without asking."
+msgstr "Accepter tous les fichiers reçus sans demander."
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:10
+msgid ""
+"Owly Drop makes AirDrop between iPhones and Linux a matter of flipping a "
+"switch: become visible, accept what an iPhone sends, or drop files on the "
+"window to send them back."
+msgstr ""
+"Owly Drop rend l'AirDrop entre iPhone et Linux aussi simple qu'un "
+"interrupteur : devenez visible, acceptez ce qu'un iPhone envoie, ou glissez "
+"des fichiers sur la fenêtre pour les lui envoyer."
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:14
+msgid ""
+"It is a graphical front end for Owly, which runs Apple's AWDL Wi-Fi link and "
+"the AirDrop protocol on ordinary Wi-Fi cards. Owly must be installed and "
+"working with your Wi-Fi card."
+msgstr ""
+"C'est une interface graphique pour Owly, qui fait fonctionner le lien Wi-Fi "
+"AWDL d'Apple et le protocole AirDrop sur des cartes Wi-Fi ordinaires. Owly "
+"doit être installé et fonctionner avec votre carte Wi-Fi."
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:19
+msgid "Accept or decline incoming files, or accept them automatically"
+msgstr ""
+"Accepter ou refuser les fichiers reçus, ou les accepter automatiquement"
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:20
+msgid "Open received files or show them in their folder"
+msgstr "Ouvrir les fichiers reçus ou les afficher dans leur dossier"
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:21
+msgid "Send files to nearby iPhones, with a progress bar"
+msgstr ""
+"Envoyer des fichiers aux iPhone à proximité, avec une barre de progression"
+
+#: data/io.github.Simon_du06.OwlyDrop.metainfo.xml.in:22
+msgid "Choose the name iPhones see and the download folder"
+msgstr "Choisir le nom que voient les iPhone et le dossier de réception"
+
+#: src/owly_drop/application.py:31
+msgid "Show the version and quit"
+msgstr "Afficher la version et quitter"
+
+#. Translators: Replace "translator-credits" with your name, one per line.
+#: src/owly_drop/application.py:113
+msgid "translator-credits"
+msgstr "Simon Puccio"
+
+#: src/owly_drop/application.py:116
+msgid "Built on"
+msgstr "Construit sur"
+
+#: src/owly_drop/formatting.py:12
 msgid "B"
 msgstr "o"
 
+#: src/owly_drop/formatting.py:12
 msgid "KB"
 msgstr "Ko"
 
+#: src/owly_drop/formatting.py:12
 msgid "MB"
 msgstr "Mo"
 
+#: src/owly_drop/formatting.py:12
 msgid "GB"
 msgstr "Go"
 
+#. Translators: a file size, such as "2.3 MB".
+#: src/owly_drop/formatting.py:18
+#, python-brace-format
+msgid "{number} {unit}"
+msgstr "{number} {unit}"
+
+#: src/owly_drop/formatting.py:24
+#, python-brace-format
 msgid "{n} file"
 msgid_plural "{n} files"
 msgstr[0] "{n} fichier"
 msgstr[1] "{n} fichiers"
 
-msgid "{name}'s PC"
-msgstr "PC de {name}"
-
-msgid "Wi-Fi is off while this computer is visible. Turn visibility off to get it back."
-msgstr "Le Wi-Fi est coupé tant que le PC est visible. Désactive la visibilité pour le retrouver."
-
-msgid "Receive"
-msgstr "Réception"
-
-msgid "Visible to iPhones"
-msgstr "Visible par les iPhone"
-
-msgid "Accept automatically"
-msgstr "Accepter automatiquement"
-
-msgid "No confirmation dialog"
-msgstr "Sans fenêtre de confirmation"
-
-msgid "Send"
-msgstr "Envoi"
-
-msgid "Or drop files onto the window."
-msgstr "Ou glisse des fichiers sur la fenêtre."
-
-msgid "Send Files…"
-msgstr "Envoyer des fichiers…"
-
-msgid "Received"
-msgstr "Reçus"
-
-msgid "Nothing received yet"
-msgstr "Rien reçu pour l'instant"
-
-msgid "Settings"
-msgstr "Réglages"
-
-msgid "Name shown on the iPhone"
-msgstr "Nom affiché sur l'iPhone"
-
-msgid "Download folder"
-msgstr "Dossier de réception"
-
-msgid "Change…"
-msgstr "Changer…"
-
-msgid "Technical log"
-msgstr "Journal technique"
-
-msgid "Off"
-msgstr "Désactivé"
-
-msgid "Starting the radio…"
-msgstr "Démarrage de la radio…"
-
-msgid "Stopping… Wi-Fi is coming back"
-msgstr "Arrêt… le Wi-Fi revient"
-
-msgid "Radio up, starting the receiver…"
-msgstr "Radio active, lancement de la réception…"
-
-msgid "Visible: on the iPhone, tap Share, then AirDrop"
-msgstr "Visible : ouvre « Partager » sur l'iPhone, puis AirDrop"
-
-msgid "{n} device nearby"
-msgid_plural "{n} devices nearby"
-msgstr[0] "{n} appareil à proximité"
-msgstr[1] "{n} appareils à proximité"
-
-msgid "Couldn't run owly. Is Owly installed?"
-msgstr "Impossible de lancer owly. Owly est-il installé ?"
-
-msgid "exit code {code}"
-msgstr "code {code}"
-
-msgid "The radio stopped: {reason}"
-msgstr "La radio s'est arrêtée : {reason}"
-
-msgid "The receiver stopped (see the log)."
-msgstr "La réception s'est arrêtée (voir le journal)."
-
-msgid "A device"
-msgstr "Un appareil"
-
-msgid "Receiving from {sender}…"
-msgstr "Réception depuis {sender}…"
-
-msgid "Request expired (no answer within 15 s)"
-msgstr "Demande expirée (pas de réponse en 15 s)"
-
-msgid "The sender cancelled"
-msgstr "L'expéditeur a annulé l'envoi"
-
-msgid "Receiving failed: {reason}"
-msgstr "Échec de la réception : {reason}"
-
-msgid "{sender} wants to send you a link"
-msgstr "{sender} veut t'envoyer un lien"
-
-msgid "{sender} wants to send you {n} file"
-msgid_plural "{sender} wants to send you {n} files"
-msgstr[0] "{sender} veut t'envoyer {n} fichier"
-msgstr[1] "{sender} veut t'envoyer {n} fichiers"
-
-msgid "… and {n} more"
-msgstr "… et {n} autres"
-
-msgid "Decline"
-msgstr "Refuser"
-
-msgid "Accept"
-msgstr "Accepter"
-
-msgid "an iPhone"
-msgstr "un iPhone"
-
-msgid "From {sender}"
-msgstr "Reçu de {sender}"
-
-msgid "{title}: {body}"
-msgstr "{title} : {body}"
-
+#: src/owly_drop/received_row.py:30
+#, python-brace-format
 msgid "Link · {sender} · {time}"
 msgstr "Lien · {sender} · {time}"
 
-msgid "Copy"
-msgstr "Copier"
-
-msgid "Open"
-msgstr "Ouvrir"
-
-msgid "Show in Folder"
-msgstr "Afficher dans le dossier"
-
+#: src/owly_drop/received_row.py:60
 msgid "Link copied"
 msgstr "Lien copié"
 
-msgid "Files to Send"
-msgstr "Fichiers à envoyer"
+#: src/owly_drop/request_dialog.py:17
+#, python-brace-format
+msgid "{sender} wants to send you a link"
+msgstr "{sender} veut vous envoyer un lien"
 
-msgid "Turning the radio on…"
-msgstr "Activation de la radio…"
+#: src/owly_drop/request_dialog.py:20
+#, python-brace-format
+msgid "{sender} wants to send you {n} file"
+msgid_plural "{sender} wants to send you {n} files"
+msgstr[0] "{sender} veut vous envoyer {n} fichier"
+msgstr[1] "{sender} veut vous envoyer {n} fichiers"
 
+#: src/owly_drop/request_dialog.py:30
+#, python-brace-format
+msgid "… and {n} more"
+msgstr "… et {n} autres"
+
+#: src/owly_drop/request_dialog.py:45
+msgid "_Decline"
+msgstr "_Refuser"
+
+#: src/owly_drop/request_dialog.py:46
+msgid "_Accept"
+msgstr "_Accepter"
+
+#: src/owly_drop/send_dialog.py:27
+#, python-brace-format
 msgid "Send {n} File"
 msgid_plural "Send {n} Files"
 msgstr[0] "Envoyer {n} fichier"
 msgstr[1] "Envoyer {n} fichiers"
 
-msgid "On the iPhone: unlocked, AirDrop set to “Everyone for 10 Minutes”."
-msgstr "Sur l'iPhone : écran déverrouillé, AirDrop sur « Tout le monde pendant 10 minutes »."
-
-msgid "Search Again"
-msgstr "Rechercher à nouveau"
-
-msgid "Choose who to send to:"
-msgstr "Choisis le destinataire :"
-
-msgid "No devices found."
-msgstr "Aucun appareil trouvé."
-
+#: src/owly_drop/send_dialog.py:37
 msgid "Looking for nearby devices…"
 msgstr "Recherche des appareils à proximité…"
 
+#: src/owly_drop/send_dialog.py:42 src/owly_drop/window.py:136
+#: src/owly_drop/window.py:231 src/owly_drop/window.py:250
+msgid "Couldn't run owly. Is Owly installed?"
+msgstr "Impossible de lancer owly. Owly est-il installé ?"
+
+#: src/owly_drop/send_dialog.py:56
+msgid "Choose who to send to:"
+msgstr "Choisissez le destinataire :"
+
+#: src/owly_drop/send_dialog.py:58
+msgid "No devices found."
+msgstr "Aucun appareil trouvé."
+
+#. Translators: the default name iPhones see for this computer.
+#: src/owly_drop/settings.py:17
+#, python-brace-format
+msgid "{name}'s PC"
+msgstr "PC de {name}"
+
+#: src/owly_drop/transfer_row.py:27
+#, python-brace-format
 msgid "Sending to {name}"
 msgstr "Envoi à {name}"
 
+#: src/owly_drop/transfer_row.py:34
 msgid "Looking for the iPhone…"
 msgstr "Recherche de l'iPhone…"
 
+#: src/owly_drop/transfer_row.py:35
 msgid "Waiting for the iPhone to accept…"
 msgstr "En attente d'acceptation sur l'iPhone…"
 
+#: src/owly_drop/transfer_row.py:36
 msgid "Sending…"
 msgstr "Envoi…"
 
+#: src/owly_drop/window.py:108
+msgid "Off"
+msgstr "Désactivé"
+
+#: src/owly_drop/window.py:110
+msgid "Starting the radio…"
+msgstr "Démarrage de la radio…"
+
+#: src/owly_drop/window.py:112
+msgid "Stopping…"
+msgstr "Arrêt…"
+
+#: src/owly_drop/window.py:114
+msgid "Radio up, starting the receiver…"
+msgstr "Radio active, lancement de la réception…"
+
+#: src/owly_drop/window.py:116
+msgid "Visible: on the iPhone, tap Share, then AirDrop"
+msgstr "Visible : sur l'iPhone, touchez Partager, puis AirDrop"
+
+#: src/owly_drop/window.py:119
+#, python-brace-format
+msgid "{n} device nearby"
+msgid_plural "{n} devices nearby"
+msgstr[0] "{n} appareil à proximité"
+msgstr[1] "{n} appareils à proximité"
+
+#: src/owly_drop/window.py:142 src/owly_drop/window.py:260
+msgid "unknown error"
+msgstr "erreur inconnue"
+
+#: src/owly_drop/window.py:144
+#, python-brace-format
+msgid "The radio stopped: {reason}"
+msgstr "La radio s'est arrêtée : {reason}"
+
+#: src/owly_drop/window.py:146
+msgid "The receiver stopped (see the log)."
+msgstr "La réception s'est arrêtée (voir le journal)."
+
+#: src/owly_drop/window.py:148
+#, python-brace-format
+msgid "Receiving failed: {reason}"
+msgstr "Échec de la réception : {reason}"
+
+#: src/owly_drop/window.py:159
+msgid "Decline"
+msgstr "Refuser"
+
+#: src/owly_drop/window.py:159
+msgid "Accept"
+msgstr "Accepter"
+
+#: src/owly_drop/window.py:169 src/owly_drop/window.py:184
+#, python-brace-format
+msgid "Receiving from {sender}…"
+msgstr "Réception depuis {sender}…"
+
+#: src/owly_drop/window.py:171
+msgid "Request expired (no answer within 15 s)"
+msgstr "Demande expirée (pas de réponse en 15 s)"
+
+#: src/owly_drop/window.py:173
+msgid "The sender cancelled"
+msgstr "L'expéditeur a annulé l'envoi"
+
+#: src/owly_drop/window.py:187
+msgid "an iPhone"
+msgstr "un iPhone"
+
+#: src/owly_drop/window.py:199
+#, python-brace-format
+msgid "From {sender}"
+msgstr "Reçu de {sender}"
+
+#: src/owly_drop/window.py:201
+#, python-brace-format
+msgid "{title}: {body}"
+msgstr "{title} : {body}"
+
+#: src/owly_drop/window.py:208
+msgid "Files to Send"
+msgstr "Fichiers à envoyer"
+
+#: src/owly_drop/window.py:227
+msgid "Turning the radio on…"
+msgstr "Activation de la radio…"
+
+#: src/owly_drop/window.py:256
+#, python-brace-format
 msgid "Sent to {name}"
 msgstr "Envoyé à {name}"
 
+#: src/owly_drop/window.py:258
+#, python-brace-format
 msgid "{name} declined"
 msgstr "{name} a refusé"
 
+#: src/owly_drop/window.py:261
+#, python-brace-format
 msgid "Sending failed: {reason}"
 msgstr "Échec de l'envoi : {reason}"
 
+#: src/owly_drop/window.py:274
 msgid "Name saved"
 msgstr "Nom enregistré"
+
+#: src/owly_drop/window.py:279 src/ui/window.ui:91
+msgid "Download Folder"
+msgstr "Dossier de réception"
+
+#: src/ui/received-row.ui:10
+msgid "Copy"
+msgstr "Copier"
+
+#: src/ui/received-row.ui:22
+msgid "Show in Folder"
+msgstr "Afficher dans le dossier"
+
+#: src/ui/received-row.ui:34
+msgid "Open"
+msgstr "Ouvrir"
+
+#: src/ui/send-dialog.ui:37
+msgid "On the iPhone: unlocked, AirDrop set to “Everyone for 10 Minutes”."
+msgstr ""
+"Sur l'iPhone : écran déverrouillé, AirDrop sur « Tout le monde pendant 10 "
+"minutes »."
+
+#: src/ui/send-dialog.ui:57
+msgid "_Search Again"
+msgstr "_Rechercher à nouveau"
+
+#: src/ui/transfer-row.ui:16
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/ui/window.ui:19
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: src/ui/window.ui:27
+msgid ""
+"Wi-Fi is off while this computer is visible. Turn visibility off to get it "
+"back."
+msgstr ""
+"Le Wi-Fi est coupé tant que l'ordinateur est visible. Désactivez la "
+"visibilité pour le retrouver."
+
+#: src/ui/window.ui:36
+msgid "Receive"
+msgstr "Réception"
+
+#: src/ui/window.ui:39
+msgid "Visible to iPhones"
+msgstr "Visible par les iPhone"
+
+#: src/ui/window.ui:45
+msgid "Accept Automatically"
+msgstr "Accepter automatiquement"
+
+#: src/ui/window.ui:46
+msgid "No confirmation dialog"
+msgstr "Sans fenêtre de confirmation"
+
+#: src/ui/window.ui:53
+msgid "Send"
+msgstr "Envoi"
+
+#: src/ui/window.ui:54
+msgid "Or drop files onto the window."
+msgstr "Ou glissez des fichiers sur la fenêtre."
+
+#: src/ui/window.ui:57
+msgid "_Send Files…"
+msgstr "_Envoyer des fichiers…"
+
+#: src/ui/window.ui:68
+msgid "Received"
+msgstr "Reçus"
+
+#: src/ui/window.ui:71
+msgid "Nothing received yet"
+msgstr "Rien reçu pour l'instant"
+
+#: src/ui/window.ui:81
+msgid "Settings"
+msgstr "Réglages"
+
+#: src/ui/window.ui:84
+msgid "Name Shown on iPhones"
+msgstr "Nom affiché sur les iPhone"
+
+#: src/ui/window.ui:94
+msgid "_Change…"
+msgstr "_Changer…"
+
+#: src/ui/window.ui:108
+msgid "Technical Log"
+msgstr "Journal technique"
+
+#: src/ui/window.ui:143
+msgid "_About Owly Drop"
+msgstr "À _propos d'Owly Drop"
+
+#: src/ui/window.ui:149
+msgid "_Quit"
+msgstr "_Quitter"

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface domain="owly-drop">
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="OwlyDropReceivedRow" parent="AdwActionRow">
+    <property name="title-lines">1</property>
+    <child type="suffix">
+      <object class="GtkButton" id="copy_button">
+        <property name="icon-name">edit-copy-symbolic</property>
+        <property name="tooltip-text" translatable="yes">Copy</property>
+        <property name="valign">center</property>
+        <property name="visible">False</property>
+        <signal name="clicked" handler="on_copy"/>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton" id="folder_button">
+        <property name="icon-name">folder-open-symbolic</property>
+        <property name="tooltip-text" translatable="yes">Show in Folder</property>
+        <property name="valign">center</property>
+        <property name="visible">False</property>
+        <signal name="clicked" handler="on_show_in_folder"/>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+    <child type="suffix">
+      <object class="GtkButton">
+        <property name="icon-name">document-open-symbolic</property>
+        <property name="tooltip-text" translatable="yes">Open</property>
+        <property name="valign">center</property>
+        <signal name="clicked" handler="on_open"/>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="owly-drop">
+  <schema id="io.github.Simon_du06.OwlyDrop" path="/io/github/Simon_du06/OwlyDrop/">
+    <key name="device-name" type="s">
+      <default>''</default>
+      <summary>Name shown on iPhones</summary>
+      <description>The name iPhones see in their AirDrop row. Empty means “Firstname's PC”.</description>
+    </key>
+    <key name="download-folder" type="s">
+      <default>''</default>
+      <summary>Download folder</summary>
+      <description>Where received files go. Empty means the Downloads folder.</description>
+    </key>
+    <key name="auto-accept" type="b">
+      <default>false</default>
+      <summary>Accept automatically</summary>
+      <description>Accept every incoming file without asking.</description>
+    </key>
+  </schema>
+</schemalist>
