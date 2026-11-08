@@ -1,0 +1,213 @@
+# French translation of Owly Drop.
+# SPDX-License-Identifier: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: owly-drop 0.1.0\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "B"
+msgstr "o"
+
+msgid "KB"
+msgstr "Ko"
+
+msgid "MB"
+msgstr "Mo"
+
+msgid "GB"
+msgstr "Go"
+
+msgid "{n} file"
+msgid_plural "{n} files"
+msgstr[0] "{n} fichier"
+msgstr[1] "{n} fichiers"
+
+msgid "{name}'s PC"
+msgstr "PC de {name}"
+
+msgid "Wi-Fi is off while this computer is visible. Turn visibility off to get it back."
+msgstr "Le Wi-Fi est coupé tant que le PC est visible. Désactive la visibilité pour le retrouver."
+
+msgid "Receive"
+msgstr "Réception"
+
+msgid "Visible to iPhones"
+msgstr "Visible par les iPhone"
+
+msgid "Accept automatically"
+msgstr "Accepter automatiquement"
+
+msgid "No confirmation dialog"
+msgstr "Sans fenêtre de confirmation"
+
+msgid "Send"
+msgstr "Envoi"
+
+msgid "Or drop files onto the window."
+msgstr "Ou glisse des fichiers sur la fenêtre."
+
+msgid "Send Files…"
+msgstr "Envoyer des fichiers…"
+
+msgid "Received"
+msgstr "Reçus"
+
+msgid "Nothing received yet"
+msgstr "Rien reçu pour l'instant"
+
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "Name shown on the iPhone"
+msgstr "Nom affiché sur l'iPhone"
+
+msgid "Download folder"
+msgstr "Dossier de réception"
+
+msgid "Change…"
+msgstr "Changer…"
+
+msgid "Technical log"
+msgstr "Journal technique"
+
+msgid "Off"
+msgstr "Désactivé"
+
+msgid "Starting the radio…"
+msgstr "Démarrage de la radio…"
+
+msgid "Stopping… Wi-Fi is coming back"
+msgstr "Arrêt… le Wi-Fi revient"
+
+msgid "Radio up, starting the receiver…"
+msgstr "Radio active, lancement de la réception…"
+
+msgid "Visible: on the iPhone, tap Share, then AirDrop"
+msgstr "Visible : ouvre « Partager » sur l'iPhone, puis AirDrop"
+
+msgid "{n} device nearby"
+msgid_plural "{n} devices nearby"
+msgstr[0] "{n} appareil à proximité"
+msgstr[1] "{n} appareils à proximité"
+
+msgid "Couldn't run owly. Is Owly installed?"
+msgstr "Impossible de lancer owly. Owly est-il installé ?"
+
+msgid "exit code {code}"
+msgstr "code {code}"
+
+msgid "The radio stopped: {reason}"
+msgstr "La radio s'est arrêtée : {reason}"
+
+msgid "The receiver stopped (see the log)."
+msgstr "La réception s'est arrêtée (voir le journal)."
+
+msgid "A device"
+msgstr "Un appareil"
+
+msgid "Receiving from {sender}…"
+msgstr "Réception depuis {sender}…"
+
+msgid "Request expired (no answer within 15 s)"
+msgstr "Demande expirée (pas de réponse en 15 s)"
+
+msgid "The sender cancelled"
+msgstr "L'expéditeur a annulé l'envoi"
+
+msgid "Receiving failed: {reason}"
+msgstr "Échec de la réception : {reason}"
+
+msgid "{sender} wants to send you a link"
+msgstr "{sender} veut t'envoyer un lien"
+
+msgid "{sender} wants to send you {n} file"
+msgid_plural "{sender} wants to send you {n} files"
+msgstr[0] "{sender} veut t'envoyer {n} fichier"
+msgstr[1] "{sender} veut t'envoyer {n} fichiers"
+
+msgid "… and {n} more"
+msgstr "… et {n} autres"
+
+msgid "Decline"
+msgstr "Refuser"
+
+msgid "Accept"
+msgstr "Accepter"
+
+msgid "an iPhone"
+msgstr "un iPhone"
+
+msgid "From {sender}"
+msgstr "Reçu de {sender}"
+
+msgid "{title}: {body}"
+msgstr "{title} : {body}"
+
+msgid "Link · {sender} · {time}"
+msgstr "Lien · {sender} · {time}"
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Open"
+msgstr "Ouvrir"
+
+msgid "Show in Folder"
+msgstr "Afficher dans le dossier"
+
+msgid "Link copied"
+msgstr "Lien copié"
+
+msgid "Files to Send"
+msgstr "Fichiers à envoyer"
+
+msgid "Turning the radio on…"
+msgstr "Activation de la radio…"
+
+msgid "Send {n} File"
+msgid_plural "Send {n} Files"
+msgstr[0] "Envoyer {n} fichier"
+msgstr[1] "Envoyer {n} fichiers"
+
+msgid "On the iPhone: unlocked, AirDrop set to “Everyone for 10 Minutes”."
+msgstr "Sur l'iPhone : écran déverrouillé, AirDrop sur « Tout le monde pendant 10 minutes »."
+
+msgid "Search Again"
+msgstr "Rechercher à nouveau"
+
+msgid "Choose who to send to:"
+msgstr "Choisis le destinataire :"
+
+msgid "No devices found."
+msgstr "Aucun appareil trouvé."
+
+msgid "Looking for nearby devices…"
+msgstr "Recherche des appareils à proximité…"
+
+msgid "Sending to {name}"
+msgstr "Envoi à {name}"
+
+msgid "Looking for the iPhone…"
+msgstr "Recherche de l'iPhone…"
+
+msgid "Waiting for the iPhone to accept…"
+msgstr "En attente d'acceptation sur l'iPhone…"
+
+msgid "Sending…"
+msgstr "Envoi…"
+
+msgid "Sent to {name}"
+msgstr "Envoyé à {name}"
+
+msgid "{name} declined"
+msgstr "{name} a refusé"
+
+msgid "Sending failed: {reason}"
+msgstr "Échec de l'envoi : {reason}"
+
+msgid "Name saved"
+msgstr "Nom enregistré"

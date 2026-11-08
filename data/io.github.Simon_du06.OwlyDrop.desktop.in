@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Owly Drop
+Comment=Send and receive files with iPhones over AirDrop
+Comment[fr]=Échanger des fichiers avec un iPhone par AirDrop
+Exec=@EXEC@
+Icon=io.github.Simon_du06.OwlyDrop
+Terminal=false
+Categories=Network;FileTransfer;GTK;
+Keywords=AirDrop;iPhone;iOS;Apple;share;transfer;
+Keywords[fr]=AirDrop;iPhone;iOS;Apple;partage;transfert;
+StartupNotify=true
